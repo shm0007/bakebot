@@ -48,6 +48,8 @@
 #recipe-input{
     width: 500px;
     height: 150px;
+    font-family: monospace;
+    font-size: 16px;
 }
 .bad-alert{
     width: 800px;
@@ -73,6 +75,9 @@
     margin-bottom: 10px;
     padding: 10px;
     color: #fff;
+    font-family: Open Sans,sans-serif;
+    border-radius: 8%;
+    border-color: #38f;
     background-color: #36f;
 }
 .green-button{
@@ -80,7 +85,10 @@
     margin-bottom: 10px;
     padding: 10px;
     color: #fff;
+    border-radius: 8%;
+    font-family: Open Sans,sans-serif;
     background-color: #00d68f;
+    border-color: #00d68f;
 }
 .button-div{
     display: flex;
