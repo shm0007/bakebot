@@ -1,13 +1,11 @@
-let constraintsToWin = 7;
-let constraintsFixed = 0;
-let minTime = 0;
-let maxTime = 1440;
-let minIngredient = 0;
-let maxIngredient = 1000;
-let minTemp = 0;
-let maxTemp = 500;
-constraintProgress = 0;
-let progress = 0;
+const constraintsToWin = 7;
+const minTime = 0;
+const maxTime = 1440;
+const minIngredient = 0;
+const maxIngredient = 1000;
+const minTemp = 0;
+const maxTemp = 500;
+const progress = 0;
 
 const cakeIngredients = 'ADD 1 Flour\nADD 2 Water\nADD 1 Sugar\nBAKE AT 375 DEGREES FOR 35 MINUTES';
 const breadIngredients = 'ADD 3 Flour\nADD 1 Water\nADD 0.25 Sugar\nBAKE AT 350 DEGREES FOR 60 MINUTES';
@@ -58,11 +56,6 @@ const warning = "You made Bakebot do something that shouldn't be possible! Each 
                 + "revealed, set it to a sensible value and bake something to ensure that the constraint restricts Bakebot to safe"
                 + "operation."
 
-function myFunction() {
-    document.getElementById("robot").src = "assets/images/robot/bakebot5000-confused.svg";
-    document.getElementById("max-ingredients").style.display = "block";
-    document.getElementById("approved-ingredients").style.display = "block";
-}
 function insertCakeRecipe(){
     document.getElementById("recipe-input").value =  cakeIngredients
 }
@@ -288,10 +281,7 @@ function deleteMsg(msg, data) {
 }
 function drawEnding(ending) {
   console.log("ending "+ ending); 
-  let imageSrc =  'assets/images/robot/bakebot5000-base.svg';
-
-  let hideFirstConstraintAlert = true;
-
+  document.getElementById("banner").style.backgroundColor = "#00d68f";
   switch (ending) {
     case 'winner':
       document.getElementById("robot").src = "assets/images/robot/bakebot5000-winner.svg";
@@ -309,7 +299,7 @@ function drawEnding(ending) {
       document.getElementById("robot").src = "assets/images/robot/bakebot5000-success-cake.svg";
       document.getElementById("bad-alert").style.display = "none";
       document.getElementById("banner").style.display = "block";
-      document.getElementById("banner").textContent= "Congrats, you made a cake";
+      document.getElementById("banner").textContent= "Congrats, you made a cake!";
       break;
     case 'success_bread':
       document.getElementById("robot").src = "assets/images/robot/bakebot5000-success-bread.svg";
@@ -374,8 +364,6 @@ function drawEnding(ending) {
       document.getElementById("banner").textContent = warning;
       document.getElementById("bad-alert").textContent= flood;
       break;
-
-
     case 'tooMuchIngredient':
       document.getElementById("robot").src = "assets/images/robot/bakebot5000-too-much-dry.svg";
       document.getElementById("bad-alert").style.display = "block";
@@ -424,17 +412,14 @@ function parseTime(s) {
 
   }
 function displayAlert(s) {
-   // alert("inside " +s);
    document.getElementById("banner").textContent = s
    document.getElementById("banner").style.backgroundColor = "#36f"
-    
-//    document.getElementById("bad-alert").style.display = "block"
-
 }
 
 
 function nopeBackground() {
   document.getElementById("bad-alert").style.display = "none";
+  document.getElementById("banner").style.backgroundColor = "#36f";
   document.getElementById("robot").src = "assets/images/robot/bakebot5000-nope.svg";
 }
 function confusedBackground() {
