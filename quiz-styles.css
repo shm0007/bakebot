@@ -1,0 +1,12 @@
+.hint{
+    background-color: brown;
+    color: white;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 400px;
+}
+
+.p-question{
+    font-size: 18px;
+}
